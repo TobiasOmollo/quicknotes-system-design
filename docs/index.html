@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quick Notes</h1>
+    </header>
+    <main>
+        <section id="notes">
+            <h2>Your Notes</h2>
+            <ul id="note-list"></ul>
+        </section>
+        <section id="add-note">
+            <h2>Add a New Note</h2>
+            <form id="note-form">
+                <input type="text" id="note-title" placeholder="Note Title" required>
+                <textarea id="note-content" rows="12" cols="80" placeholder="Write your note here." required></textarea>
+                <button type="submit" id="load-btn">Add Note</button>
+            </form>
+        </section>
+    </main>
+    <script src="api.js"></script>
+</body>
+</html>
