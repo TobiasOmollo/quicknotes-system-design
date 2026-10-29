@@ -1,0 +1,253 @@
+:root {
+    color-scheme: light;
+    font-family: "Space Mono", monospace;
+    color: #f8efe2;
+    background: #482b20;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    --cream: #f5ead8;
+    --ink: #39251d;
+    --brown: #70452f;
+    --brown-dark: #482b20;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: clamp(1.25rem, 5vw, 4rem) 1.25rem;
+    background: linear-gradient(135deg, #9b6845 0%, #70452f 42%, #39251d 100%);
+}
+
+header,
+main {
+    width: min(100%, 56rem);
+    margin-inline: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid rgb(255 245 228 / 24%);
+    border-radius: 1.25rem 1.25rem 0 0;
+    background: rgb(57 37 29 / 25%);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+h1,
+h2,
+label,
+button,
+.nav-link {
+    font-family: "Space Mono", monospace;
+}
+
+h1 {
+    margin: 0;
+    color: #fff6e8;
+    font-size: clamp(2rem, 7vw, 3.75rem);
+    letter-spacing: -0.08em;
+}
+
+main {
+    display: grid;
+    gap: 1.25rem;
+    padding: clamp(1rem, 4vw, 2rem);
+    border-radius: 0 0 1.25rem 1.25rem;
+    background: var(--cream);
+    color: var(--ink);
+    box-shadow: 0 1.5rem 4rem rgb(35 19 13 / 28%);
+}
+
+#status {
+    min-height: 1.5em;
+    margin: 0;
+    color: #67432e;
+    font-size: 0.8rem;
+}
+
+#status[data-state="success"] {
+    color: #37613d;
+}
+
+#status[data-state="error"] {
+    color: #9c342a;
+    font-family: "Outfit", sans-serif;
+}
+
+#status[data-state="loading"] {
+    color: #67432e;
+}
+
+#status[data-state="empty"] {
+    color: #725d4b;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    color: #64402d;
+    font-size: 1.15rem;
+}
+
+button {
+    width: fit-content;
+    padding: 0.8rem 1.15rem;
+    border: 1px solid var(--brown);
+    border-radius: 0.5rem;
+    background: var(--brown);
+    color: #fff8ed;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.8rem 1.15rem;
+    border: 1px solid #f5ead8;
+    border-radius: 0.5rem;
+    color: #fff8ed;
+    font-size: 0.78rem;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+nav button[aria-pressed="true"] {
+    box-shadow: 0 0 0 2px #e8c89f;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: var(--brown-dark);
+}
+
+.nav-link:hover {
+    transform: translateY(-1px);
+    background: var(--cream);
+    color: var(--brown-dark);
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+    transform: none;
+}
+
+button:focus-visible,
+.nav-link:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #bd8a5d;
+    outline-offset: 3px;
+}
+
+#notes-list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#notes-list > li {
+    padding: 1.15rem;
+    border: 1px solid #e1d2bd;
+    border-radius: 0.75rem;
+    background: #fffaf1;
+}
+
+#notes-list > .empty-state {
+    color: #725d4b;
+    font-family: "Instrument Serif", serif;
+    font-size: 1.15rem;
+    font-style: italic;
+}
+
+#notes-list h3,
+#notes-list strong {
+    font-family: "Space Mono", monospace;
+}
+
+#notes-list p {
+    margin: 0.6rem 0 0;
+    color: #49372d;
+    font-family: "Instrument Serif", serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+#note-form {
+    display: grid;
+    gap: 0.65rem;
+}
+
+label {
+    color: #64402d;
+    font-size: 0.8rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid #d5c2a9;
+    border-radius: 0.5rem;
+    background: #fffaf1;
+    color: var(--ink);
+    font: 1rem "Instrument Serif", serif;
+}
+
+input {
+    min-height: 2.8rem;
+}
+
+#title-input {
+    font-family: "Space Mono", monospace;
+}
+
+#body-input {
+    min-height: 12rem;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+#submit-btn {
+    margin-top: 0.35rem;
+}
+
+@media (max-width: 36rem) {
+    body {
+        padding-inline: 0.75rem;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    main {
+        border-radius: 0 0 1rem 1rem;
+    }
+}

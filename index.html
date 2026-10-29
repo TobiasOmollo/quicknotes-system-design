@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quick Notes</h1>
+        <nav aria-label="Main navigation">
+            <button type="button" id="load-btn" aria-controls="notes" aria-pressed="false">Load saved notes</button>
+            <button type="button" id="add-note-btn" class="nav-link" aria-controls="add-note" aria-pressed="true">Add note</button>
+        </nav>
+    </header>
+    <main>
+        <p id="status" role="status" aria-live="polite"></p>
+        <section id="notes" hidden>
+            <h2>Your Notes</h2>
+            <ul id="notes-list"></ul>
+        </section>
+        <section id="add-note">
+            <h2>Add a New Note</h2>
+            <form id="note-form">
+                <label for="title-input">Title</label>
+                <input type="text" id="title-input" name="title" placeholder="Note Title" maxlength="100" required>
+                <label for="body-input">Body</label>
+                <textarea id="body-input" name="body" rows="12" cols="80" placeholder="Write your note here." required></textarea>
+                <button type="submit" id="submit-btn">Add Note</button>
+            </form>
+        </section>
+    </main>
+    <script src="api.js" defer></script>
+</body>
+</html>
